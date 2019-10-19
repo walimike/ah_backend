@@ -12,6 +12,8 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+/storage/*
+/vendor/.keep
 
 # Ignore uploaded files in development.
 /storage/*
@@ -29,3 +31,5 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+node_modules
+.rspec
