@@ -21,9 +21,8 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'travis'
 gem 'bcrypt', '~> 3.1.7'
-
+gem 'travis'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 gem 'coveralls', require: false
@@ -52,6 +51,7 @@ group :test do
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
   gem 'factory_bot_rails'
+  gem 'shoulda-matchers'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
