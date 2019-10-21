@@ -33,3 +33,7 @@ yarn-debug.log*
 .yarn-integrity
 node_modules
 .rspec
+
+input.txt
+travis.log
+
