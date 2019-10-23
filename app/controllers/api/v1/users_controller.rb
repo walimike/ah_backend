@@ -8,6 +8,7 @@ class Api::V1::UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user.save
+            UserMailer.with(user: @user).new_user_email.deliver_later
             render json: @user, status: :created
         else
             render json: { errors: @user.errors },
