@@ -10,29 +10,7 @@ RSpec.describe 'test user route' do
     end
 
     describe "POST /api/v1/users" do
-        context "with valid parameters" do
-          let(:valid_params) do
-                        {
-            "user":{
-                "user_name": "Jacob",
-                "email": "jake@jake.jake",
-                "password": "jakejake",
-                "password_confirmation":"jakejake"
-            }
-            }
-          end
-
-          let(:invalid_params) do
-            {
-            "user":{
-                "user_name": "",
-                "email": "wali@jake.jake",
-                "password": "jakejake",
-                "password_confirmation":"jakejake"
-            }
-            }
-         end
-    
+        context "with valid parameters" do    
           it "creates a new user" do
             expect { post user_signup_url, params: valid_params }.to change(User, :count).by(+1)
             expect(response).to have_http_status :created
