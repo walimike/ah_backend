@@ -6,4 +6,26 @@ module RequestHelpers
     def request_json
         JSON.parse(response.body)
     end
+
+    def valid_params
+        {
+            "user":{
+            "user_name": "Jacob",
+            "email": "jake@jake.jake",
+            "password": "jakejake",
+            "password_confirmation":"jakejake"
+            }
+        }
+    end
+
+    def invalid_params
+        {
+        "user":{
+            "user_name": "",
+            "email": "wali@jake.jake",
+            "password": "jakejake",
+            "password_confirmation":"jakejake"
+        }
+        }
+     end
 end
