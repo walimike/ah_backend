@@ -22,4 +22,19 @@ RSpec.describe 'test user route' do
           end
         end
     end
+
+    describe "POST /api/v1/auth/login" do
+      context "with valid parameters" do 
+        it "generates a token with registered user " do
+          expect { post user_signup_url, params: valid_params }.to change(User, :count).by(+1)
+          post '/api/v1/auth/login', params: valid_params 
+          expect { JWT.decode(request_json['token'], key) }.to_not raise_error(JWT::DecodeError)
+        end
+
+        it "returns an error message with unregistered user" do
+          post '/api/v1/auth/login', params: valid_params 
+          expect(request_json['errors']).to eql("unauthorized")
+        end
+      end
+    end
 end
