@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       root :to => 'users#index'
+      post '/auth/login', to: 'authentication#login'
       resources :users, only: [:index, :create]
     end
   end
